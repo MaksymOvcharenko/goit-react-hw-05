@@ -42,10 +42,9 @@ const MoviesPage = () => {
 
     const form = e.target;
     const { query } = form.elements;
-    // setQuery(query.value.toLowerCase());
+
     setSearchParams({ query: query.value.toLowerCase() });
   };
-  console.log(isFalse);
 
   return (
     <>
