@@ -28,7 +28,6 @@ const MovieReviews = () => {
 
   return (
     <>
-      {" "}
       {loading && (
         <Audio
           height="80"
@@ -36,8 +35,6 @@ const MovieReviews = () => {
           radius="9"
           color="black"
           ariaLabel="loading"
-          wrapperStyle
-          wrapperClass
         />
       )}
       {error && <p>Something wrong...</p>}

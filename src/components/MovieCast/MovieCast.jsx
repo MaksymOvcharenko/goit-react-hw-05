@@ -37,8 +37,6 @@ const MovieCast = () => {
           radius="9"
           color="black"
           ariaLabel="loading"
-          wrapperStyle
-          wrapperClass
         />
       )}
       {error && <p>Something wrong...</p>}

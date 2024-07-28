@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import s from "./HomePage.module.css";
+
 import { fetchTrends } from "../../service/api";
-import { Link } from "react-router-dom";
+
 import { Audio } from "react-loader-spinner";
+import MovieList from "../../components/MovieList/MovieList";
 
 const HomePage = () => {
   const [movies, setMovies] = useState([]);
@@ -35,26 +36,11 @@ const HomePage = () => {
           radius="9"
           color="black"
           ariaLabel="loading"
-          wrapperStyle
-          wrapperClass
         />
       )}
       {error && <p>Something wrong...</p>}
-      <div className={s.cont}>
-        <h1>Tredings movies :</h1>
-        <ul>
-          {movies.map(({ title, id, poster_path }) => (
-            <li key={id}>
-              <img
-                src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
-                alt={title}
-                height={120}
-              />
-              <Link to={`/movies/${id}`}>{title}</Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+
+      <MovieList movies={movies}>Tredings movies :</MovieList>
     </>
   );
 };
