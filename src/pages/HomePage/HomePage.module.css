@@ -1,0 +1,31 @@
+.cont {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  align-items: center;
+  && ul,
+  li {
+    list-style-type: none;
+  }
+}
+.cont ul {
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
+  flex-wrap: wrap;
+
+  gap: 16px;
+}
+.cont li {
+  background: #f3ecfc;
+  display: flex;
+  gap: 8px;
+  max-width: 240px;
+  border-radius: 8px;
+  text-align: center;
+  padding: 8px;
+  &&:hover {
+    background: #c9c3d1;
+  }
+}

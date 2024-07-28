@@ -1,0 +1,10 @@
+.nav {
+  width: 100vw;
+  height: 40px;
+  display: flex;
+  background: #c0b9d4;
+  color: rgb(0, 0, 0);
+  justify-content: center;
+  gap: 40px;
+  padding: 12px;
+}
