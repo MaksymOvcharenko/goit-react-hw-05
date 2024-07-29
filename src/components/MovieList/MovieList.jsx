@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import s from "./MovieList.module.css";
-const MovieList = ({ movies, children }) => {
+const MovieList = ({ movies, children, state }) => {
   return (
     <>
       <div className={s.cont}>
@@ -13,7 +13,9 @@ const MovieList = ({ movies, children }) => {
                 alt={title}
                 height={120}
               />
-              <Link to={`/movies/${id}`}>{title}</Link>
+              <Link to={`/movies/${id}`} state={state}>
+                {title}
+              </Link>
             </li>
           ))}
         </ul>

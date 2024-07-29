@@ -16,7 +16,7 @@ const MovieDetailsPage = () => {
   const [genres, setGenres] = useState([]);
   const location = useLocation();
   const goBack = useRef(location?.state ?? "/movies");
-
+  console.log(location);
   useEffect(() => {
     const fetchData = async () => {
       try {

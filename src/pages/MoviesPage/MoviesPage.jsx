@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { fetchSearch } from "../../service/api";
-import { useSearchParams } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 import s from "./MoviesPage.module.css";
 import { Audio } from "react-loader-spinner";
 import MovieList from "../../components/MovieList/MovieList";
@@ -12,6 +12,7 @@ const MoviesPage = () => {
   const [error, setError] = useState(null);
   const [isFalse, setIsFalse] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams({});
+  const location = useLocation();
 
   const movie = searchParams.get("query");
   useEffect(() => {
@@ -67,10 +68,8 @@ const MoviesPage = () => {
       {error && <p>Something wrong...</p>}
       <div className={s.cont}>
         {isFalse && <h3>Do not found movies, Please Try again!</h3>}
-
-        <MovieList movies={movies}>
-          {movies.length > 0 && <h4>We find {movies.length} movies</h4>}
-        </MovieList>
+        {movies.length > 0 && <h2>We find {movies.length} movies</h2>}
+        <MovieList movies={movies} state={location}></MovieList>
       </div>
     </>
   );
